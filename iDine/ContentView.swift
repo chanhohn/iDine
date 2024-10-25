@@ -13,18 +13,15 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             List {
-//                ForEach(menu) {
-//                    section in Text(section.name)
-//                    ForEach(section.items) {
-//                        item in Text(item.name)
-//                    }
-//                }
-
                 ForEach(menu) {
                     section in
                     Section(header: Text(section.name)) {
                         ForEach(section.items) {
-                            item in Text(item.name)
+                            item in NavigationLink {
+                                Text(item.name)
+                            } label: {
+                                ItemRow(item: item)
+                            }
                         }
                     }
                 }
