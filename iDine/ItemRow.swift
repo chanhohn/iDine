@@ -16,7 +16,7 @@ struct ItemRow: View {
             Image(item.thumbnailImage)
                 .clipShape(.circle)
                 .overlay(Circle().stroke(.gray, lineWidth: 2))
-                .padding()
+//              .padding()
             VStack(alignment: .leading) {
                 Text(item.name)
                     .font(.title2)
