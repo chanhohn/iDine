@@ -11,14 +11,26 @@ struct ItemDetail: View {
     let item: MenuItem
 
     var body: some View {
+//       设置文字的对齐方式
         VStack(alignment: .leading) {
-            Image(item.mainImage)
+//            设置Zstack中Text的对齐方式，为右下角
+            ZStack(alignment: .bottomTrailing){
+                Image(item.mainImage)
+                Text("Photo by: \(item.photoCredit)")
+                    .font(.caption)
+                    .padding(8)
+                    .background(.black)
+                    .foregroundStyle(.white)
+                    .offset(x:-8,y:-4)
+            }
+           
             Text(item.description)
                 .padding()
             Spacer()
         }
         .navigationTitle(Text(item.name))
-        .padding()
+//       将标题变小，而不是特别粗的标题样式
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
