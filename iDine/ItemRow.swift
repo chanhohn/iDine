@@ -30,6 +30,7 @@ struct ItemRow: View {
                     .font(.caption)
                     .fontWeight(.black)
                     .padding(5)
+//                根据数组的遍历来设置背景颜色
                     .background(colors[restriction, default: .black])
                     .clipShape(Circle())
                     .foregroundStyle(.white)

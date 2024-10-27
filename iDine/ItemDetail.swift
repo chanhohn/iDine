@@ -16,6 +16,8 @@ struct ItemDetail: View {
 //            设置Zstack中Text的对齐方式，为右下角
             ZStack(alignment: .bottomTrailing){
                 Image(item.mainImage)
+                    .resizable()
+                    .scaledToFit()
                 Text("Photo by: \(item.photoCredit)")
                     .font(.caption)
                     .padding(8)
