@@ -14,7 +14,7 @@ struct ItemDetail: View {
 //       设置文字的对齐方式
         VStack(alignment: .leading) {
 //            设置Zstack中Text的对齐方式，为右下角
-            ZStack(alignment: .bottomTrailing){
+            ZStack(alignment: .bottomTrailing) {
                 Image(item.mainImage)
                     .resizable()
                     .scaledToFit()
@@ -23,9 +23,9 @@ struct ItemDetail: View {
                     .padding(8)
                     .background(.black)
                     .foregroundStyle(.white)
-                    .offset(x:-8,y:-4)
+                    .offset(x: -8, y: -4)
             }
-           
+
             Text(item.description)
                 .padding()
             Spacer()
@@ -37,8 +37,7 @@ struct ItemDetail: View {
 }
 
 #Preview {
-    NavigationStack{
+    NavigationStack {
         ItemDetail(item: MenuItem.example)
     }
-    
 }
