@@ -38,6 +38,6 @@ struct ItemDetail: View {
 
 #Preview {
     NavigationStack {
-        ItemDetail(item: MenuItem.example)
+        ItemDetail(item: MenuItem.example).environmentObject(Order())
     }
 }
