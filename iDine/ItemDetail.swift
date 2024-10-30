@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ItemDetail: View {
     let item: MenuItem
+    @EnvironmentObject var order: Order
 
     var body: some View {
 //       设置文字的对齐方式
@@ -28,6 +29,11 @@ struct ItemDetail: View {
 
             Text(item.description)
                 .padding()
+            
+            Button("Order This") {
+                order.add(item: item)
+            }
+            .buttonStyle(.borderedProminent)
             Spacer()
         }
         .navigationTitle(Text(item.name))
