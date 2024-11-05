@@ -13,7 +13,7 @@ struct CheckOutView: View {
     @State private var payType = "weChatPay"
 
     var body: some View {
-        VStack {
+        Form {
             Section {
                 Picker("How do you want to pay", selection: $payType) {
                     ForEach(payTypes, id: \.self) {
